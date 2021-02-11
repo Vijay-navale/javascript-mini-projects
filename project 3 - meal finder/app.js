@@ -43,6 +43,7 @@ const getMeals = (e) => {
             });
     } else {
         alert('Enter Meal Name');
+        resultHeading.innerHTML = '';
     }
 
     inputSearch.value = '';
