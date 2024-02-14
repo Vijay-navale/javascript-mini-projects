@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* "★" */
+      #starWrapper {
+        text-align: center;
+      }
+      .star {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 30px;
+        padding: 0;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .star::before {
+        display: inline-block;
+      }
+      .star-filled::before {
+        content: "★";
+        color: gold;
+      }
+      .star-empty::before {
+        content: "☆";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="starWrapper">
+      <button class="star star-empty" data-index="1"></button>
+      <button class="star star-empty" data-index="2"></button>
+      <button class="star star-empty" data-index="3"></button>
+      <button class="star star-empty" data-index="4"></button>
+      <button class="star star-empty" data-index="5"></button>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

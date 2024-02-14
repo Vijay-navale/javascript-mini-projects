@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cells_wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 330px;
+        height: 330px;
+        gap: 5px;
+      }
+      button {
+        font-size: 32px;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+      .reset_btn {
+        display: none;
+        width: initial;
+        height: initial;
+        font-size: initial;
+      }
+      .reset_btn.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cells_wrapper" id="cellsWrapper"></div>
+    <span id="gameResult"></span>
+    <button class="reset_btn" id="resetBtn">Reset</button>
+    <script src="./app.js"></script>
+  </body>
+</html>
