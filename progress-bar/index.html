@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      .progress {
+      /* .progress {
         width: 50%;
         height: 10px;
         background-color: #ececec;
@@ -30,54 +30,37 @@
         margin: 1rem;
         padding: 1rem;
         border: 1px solid #999;
-      }
+      } */
       #box {
         background-color: cornflowerblue;
-        width: 1rem;
-        height: 1rem;
+        width: 4rem;
+        height: 4rem;
+        margin: 0;
+        margin-top: 5rem;
       }
     </style>
   </head>
   <body>
-    <div class="progress">
+    <!-- <div class="progress">
       <div class="progress-fill" id="progressFill"></div>
     </div>
     <button id="start">start</button>
     <button id="stop">stop</button>
-    <button id="reset">reset</button>
-    <p id="output"></p>
+    <button id="reset">reset</button> -->
+    <!-- <p id="output"></p> -->
     <p id="box"></p>
     <script>
-      let output = document.getElementById("output");
       let box = document.getElementById("box");
-      let number = 0;
-      let xpos = 0;
-      function paint() {
-        number++;
-        output.textContent = number;
-
-        if (number < 300) {
-          requestAnimationFrame(paint);
-        }
-      }
-
-      function move(timmy) {
-        // console.log("timmy", timmy);
-        if (timmy) {
-          let diff = timmy - number;
-          console.log("frame", diff);
-          number = timmy; //highResTimeStamp
-        }
-        xpos = xpos + 5;
-        box.style.transform = `translateX(${xpos}px)`;
-        let ww = document.body.clientWidth - 100;
-        if (xpos < ww) {
-          requestAnimationFrame(move);
-        }
-      }
-
-      window.requestAnimationFrame(move);
+      let startTime;
+      let boxProgress;
+      const animate = (timestamp) => {
+        if (!startTime || boxProgress > 500) startTime = timestamp;
+        boxProgress = (timestamp - startTime) / 10 + 60;
+        box.style.transform = `translateX(${boxProgress}px)`;
+        window.requestAnimationFrame(animate);
+      };
+      // requestAnimationFrame(animate);
     </script>
-    <script src="./app.js"></script>
+    <!-- <script src="./app.js"></script> -->
   </body>
 </html>

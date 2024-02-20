@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #displayCount {
+        display: flex;
+        width: fit-content;
+      }
+      input {
+        margin-right: 30px;
+        font-size: 24px;
+      }
+      span {
+        position: absolute;
+        left: 34%;
+        transform: translateX(-50%);
+        font-size: 18px;
+      }
+      #minLSB {
+        position: relative;
+      }
+      #minLSB::before {
+        content: ":";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="displayCount">
+      <input type="text" value="0" id="minMSB" />
+      <input type="text" value="0" id="minLSB" />
+      <input type="text" value="0" id="secMSB" />
+      <input type="text" value="0" id="secLSB" />
+    </div>
+    <div id="btnsWrapper">
+      <button id="start">Start</button>
+      <button id="stop" disabled>Stop</button>
+      <button id="reset">Reset</button>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
