@@ -41,6 +41,21 @@
       .carousel_slide {
         width: 100%;
       }
+      .pagination {
+        margin-top: 10px;
+      }
+      .pagination span {
+        width: 10px;
+        height: 10px;
+        background-color: grey;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 3px;
+        cursor: pointer;
+      }
+      span.active {
+        background-color: blue;
+      }
     </style>
   </head>
   <body>
@@ -50,7 +65,28 @@
       </div>
       <button class="prev" id="prev"><</button>
       <button class="next" id="next">></button>
-      <div class="pagination"></div>
+      <div class="pagination" id="pagination"></div>
+      <div>
+        <label for="infiniteScroll">Infinite scroll</label>
+        <input type="checkbox" id="infiniteScroll" />
+      </div>
+      <div>
+        <label for="autoplay">Autoplay</label>
+        <input type="checkbox" id="autoplay" />
+      </div>
+      <div>
+        <label for="autoplayInterval">Autoplay Interval</label>
+        <input
+          type="range"
+          name="autoplayInterval"
+          id="autoplayInterval"
+          min="1000"
+          max="5000"
+          value="3000"
+          step="1000"
+          disabled
+        />
+      </div>
     </div>
     <script src="./app.js"></script>
   </body>
