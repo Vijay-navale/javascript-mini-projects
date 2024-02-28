@@ -2,8 +2,8 @@ const imgList = [
   "1-OkPi44L4.jpg",
   "2-LbNREVae.jpg",
   "3-SrIwCN-U.jpg",
-  // "4-IwShTW20.jpg",
-  // "5-XTj0vlQy.jpg",
+  "4-IwShTW20.jpg",
+  "5-XTj0vlQy.jpg",
 ];
 
 const carouselImgWrapper = document.getElementById("carouselImgWrapper");
@@ -85,13 +85,23 @@ infiniteScroll.addEventListener("change", (e) => {
   updateBtnsState();
 });
 
+const setAutoplay = (ms) => {
+  if (timerId) clearInterval(timerId);
+  timerId = setInterval(autoPlayNextSlide, ms);
+};
+
 autoplay.addEventListener("change", (e) => {
   if (e.target.checked) {
     autoplayInterval.disabled = false;
-    timerId = setInterval(autoPlayNextSlide, Number(autoplayInterval.value));
+    setAutoplay(Number(autoplayInterval.value));
     return;
   }
+  autoplayInterval.disabled = true;
   clearInterval(timerId);
+});
+
+autoplayInterval.addEventListener("change", (e) => {
+  setAutoplay(Number(e.target.value));
 });
 
 pagination.addEventListener("click", (e) => {
