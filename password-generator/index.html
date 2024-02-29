@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <input type="text" />
+    <p id="charLength"></p>
+    <input
+      type="range"
+      min="6"
+      max="24"
+      value="6"
+      step="1"
+      id="charLengthRange"
+    />
+    <div>
+      <input type="checkbox" id="lowerCase" />
+      <label for="lowerCase">Include Lowercase</label>
+    </div>
+    <div>
+      <input type="checkbox" id="uppercase" />
+      <label for="uppercase">Include uppercase</label>
+    </div>
+    <div>
+      <input type="checkbox" id="numbers" />
+      <label for="numbers">Include numbers</label>
+    </div>
+    <div>
+      <input type="checkbox" id="symbols" />
+      <label for="symbols">Include symbols</label>
+    </div>
+    <button id="generate">Generate</button>
+    <script src="./app.js"></script>
+  </body>
+</html>
