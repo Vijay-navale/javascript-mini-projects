@@ -7,7 +7,7 @@
     <style></style>
   </head>
   <body>
-    <input type="text" />
+    <input type="text" id="passwordText" readonly />
     <p id="charLength"></p>
     <input
       type="range"
@@ -17,21 +17,23 @@
       step="1"
       id="charLengthRange"
     />
-    <div>
-      <input type="checkbox" id="lowerCase" />
-      <label for="lowerCase">Include Lowercase</label>
-    </div>
-    <div>
-      <input type="checkbox" id="uppercase" />
-      <label for="uppercase">Include uppercase</label>
-    </div>
-    <div>
-      <input type="checkbox" id="numbers" />
-      <label for="numbers">Include numbers</label>
-    </div>
-    <div>
-      <input type="checkbox" id="symbols" />
-      <label for="symbols">Include symbols</label>
+    <div id="inputsWrapper">
+      <div>
+        <input type="checkbox" id="lowerCase" checked />
+        <label for="lowerCase">Include Lowercase</label>
+      </div>
+      <div>
+        <input type="checkbox" id="upperCase" />
+        <label for="upperCase">Include uppercase</label>
+      </div>
+      <div>
+        <input type="checkbox" id="numbers" />
+        <label for="numbers">Include numbers</label>
+      </div>
+      <div>
+        <input type="checkbox" id="symbols" />
+        <label for="symbols">Include symbols</label>
+      </div>
     </div>
     <button id="generate">Generate</button>
     <script src="./app.js"></script>
